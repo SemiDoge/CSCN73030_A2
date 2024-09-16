@@ -40,7 +40,11 @@ int main() {
 		}
 	}
 
-	std::cout << std::format("studentData(sz: {}, lastIDX: {}, {})", studentData.size(), studentData[studentData.size()-1].lastName, studentData[studentData.size()-1].firstName);
+	#if _DEBUG
+		for (int i = 0; i < studentData.size(); i++) {
+			std::cout << std::format("[{}]: {}, {}\n", i, studentData[i].lastName, studentData[i].firstName);
+		}
+	#endif
 
 	return 0;
 }
